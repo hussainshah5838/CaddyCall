@@ -1,44 +1,52 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../config/constants/app_colors.dart';
 import '../../../../config/constants/app_fonts.dart';
 import '../../../../generated/assets.dart';
 import '../../custom/my_text_widget.dart';
+import '../user/home/home_screen.dart';
+import '../user/location/view_pitch_detail_screen.dart';
 
-class FanBottomNavBar extends StatefulWidget {
-  const FanBottomNavBar({super.key});
+class BottomNavBar extends StatelessWidget {
+  BottomNavBar({super.key});
 
-  @override
-  State<FanBottomNavBar> createState() => _FanBottomNavBarState();
-}
-
-class _FanBottomNavBarState extends State<FanBottomNavBar> {
   final RxInt currentIndex = 0.obs;
 
-  late List<Map<String, dynamic>> items;
-
-  @override
-  void initState() {
-    super.initState();
-    updateItems();
-  }
-
-  void updateItems() {
-    items = [
-      {'image': "Assets.imagesHome", 'label': 'Home'},
-      {'image': "Assets.imagesMessage", 'label': 'Message'},
-      {'image': "Assets.imagesCalendar", 'label': 'History'},
-      {'image': "Assets.imagesProfile1", 'label': 'Profile'},
-    ];
-  }
+  final List<Map<String, dynamic>> items = [
+    {
+      'selected': Assets.imagesSelectedHome,
+      'unselected': Assets.imagesUnselectedHome,
+      'label': 'Home',
+    },
+    {
+      'selected': Assets.imagesSelectedLocation,
+      'unselected': Assets.imagesUnselectedLocation,
+      'label': 'Track',
+    },
+    {
+      'selected': Assets.imagesSelectedShop,
+      'unselected': Assets.imagesUnselectedShop,
+      'label': 'Shop',
+    },
+    {
+      'selected': Assets.imagesSelectedScoreBoard,
+      'unselected': Assets.imagesUnselectedScoreboard,
+      'label': 'Scorecard',
+    },
+    {
+      'selected': Assets.imagesSelectedProfile,
+      'unselected': Assets.imagesUnselectedProfile,
+      'label': 'Profile',
+    },
+  ];
 
   final List<Widget> screens = [
-    //HomeScreen(),
-    //ChatUiScreen(),
-    //HistoryScreen(),
-    //ProfileScreen(showLeading: false,),
+    HomeScreen(),
+    ViewPitchDetailScreen(),
+    HomeScreen(),
+    HomeScreen(),
+    HomeScreen(),
   ];
 
   @override
@@ -48,57 +56,48 @@ class _FanBottomNavBarState extends State<FanBottomNavBar> {
         body: screens[currentIndex.value],
         bottomNavigationBar: Container(
           decoration: ShapeDecoration(
+            color: kPrimaryColor,
             shape: RoundedRectangleBorder(
               side: BorderSide(
                 width: 1,
                 strokeAlign: BorderSide.strokeAlignCenter,
-                color: const Color(0xFFE9E8EF),
+                color: kPrimaryColor,
               ),
             ),
           ),
           child: BottomNavigationBar(
             elevation: 0,
-            backgroundColor: Colors.transparent,
+            backgroundColor: kPrimaryColor,
             onTap: (index) {
               currentIndex.value = index;
-              log(currentIndex.value.toString());
-              updateItems();
+              log("Selected Index: ${currentIndex.value}");
             },
             type: BottomNavigationBarType.fixed,
             currentIndex: currentIndex.value,
             selectedFontSize: 12,
             unselectedFontSize: 12,
-            selectedLabelStyle: TextStyle(
-              fontFamily: AppFonts.poppins,
-              color: kTertiaryColor,
-            ),
-            unselectedLabelStyle: TextStyle(
-              fontFamily: AppFonts.poppins,
-              color: kTertiaryColor,
-            ),
             selectedItemColor: kPrimaryColor,
             unselectedItemColor: kTertiaryColor,
             items: List.generate(items.length, (index) {
               final isActive = currentIndex.value == index;
               return BottomNavigationBarItem(
-                tooltip: 'ss',
+                tooltip: items[index]['label'],
                 icon: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      items[index]['image'],
-                      color:
-                          index == 4
-                              ? null
-                              : (isActive ? kPrimaryColor : kTertiaryColor),
-                      width: 28,
+                      isActive
+                          ? items[index]['selected']
+                          : items[index]['unselected'],
+                      width: 25,
+                      height: 25,
                     ),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 5),
                     MyText(
                       text: items[index]['label'],
-                      color: isActive ? kPrimaryColor : kTertiaryColor,
+                      color: isActive ? kQuaternaryColor : kUSLCColor,
                       size: 12,
-                      weight: FontWeight.w500,
+                      weight: isActive ? FontWeight.w600 : FontWeight.w500,
                       fontFamily: AppFonts.inter,
                     ),
                   ],

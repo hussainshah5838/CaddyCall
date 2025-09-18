@@ -1,5 +1,9 @@
+import 'package:caddy_call/view/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
+import 'package:caddy_call/view/screens/staff/staff_home/staff_home_screen.dart';
 import 'package:caddy_call/view/screens/user/home/home_screen.dart';
+import 'package:caddy_call/view/screens/user/location/items_detail_screen.dart';
 import 'package:caddy_call/view/screens/user/location/view_menu_screen.dart';
+import 'package:caddy_call/view/screens/user/location/view_pitch_detail_screen.dart';
 import 'package:caddy_call/view/screens/user/score_card/score_card_screen.dart';
 import 'package:caddy_call/view/screens/user/setting/achievements_screen.dart';
 import 'package:caddy_call/view/screens/user/setting/history_screen.dart';
@@ -56,7 +60,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(backgroundColor: Colors.white),
       ),
-      home: ViewMenuScreen(),
+      home: StaffHomeScreen(),
       defaultTransition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 500),
     );

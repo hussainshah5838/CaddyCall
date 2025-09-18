@@ -16,7 +16,7 @@ class MyTextField extends StatefulWidget {
   int? maxLines;
   double? labelSize, hintsize;
   FocusNode? focusNode;
-  Color? filledColor, focusedFillColor, hintColor, labelColor;
+  Color? filledColor, focusedFillColor, hintColor, labelColor,borderColor;
   Widget? prefix, suffix;
   FontWeight? labelWeight, hintWeight;
   final VoidCallback? onTap;
@@ -37,6 +37,7 @@ class MyTextField extends StatefulWidget {
     this.focusedFillColor,
     this.hintColor,
     this.labelColor,
+    this.borderColor,
     this.haveLabel = true,
     this.labelSize,
     this.hintsize,
@@ -144,7 +145,7 @@ class _MyTextFieldState extends State<MyTextField> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(widget.radius ?? 4),
                     borderSide: BorderSide(
-                      color: kTFBorderColor,
+                      color: widget.borderColor ?? kTFBorderColor,
                       width: 1,
                     ),
                   ),

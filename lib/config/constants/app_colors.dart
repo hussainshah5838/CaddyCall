@@ -16,6 +16,9 @@ const kTFBorderColor = Color(0xFFD0D0D0);
 const kCheckBoxColor = Color(0xFF00A9CE);
 const kBorderColor = Color(0xFFEDEFFF);
 const kWBGColor = Color(0xFFF3F3F3);
+const kUSLCColor = Color(0xFFBBBBBB);
+const kGLColor = Color(0xFF4A7B46);
+const kGGCColor = Color(0xFF8C8D8B);
 
 
 

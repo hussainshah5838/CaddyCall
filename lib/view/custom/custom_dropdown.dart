@@ -210,7 +210,8 @@ class CustomDropDown extends StatelessWidget {
                   size: 12,
                   fontFamily: AppFonts.poppins,
                   textAlign: TextAlign.start,
-                  weight: FontWeight.w600,
+                  weight: FontWeight.w500,
+                  color: kBlackColor,
                 ),
               ),
             Animate(
@@ -229,7 +230,7 @@ class CustomDropDown extends StatelessWidget {
                           child: MyText(
                               text: item.tr, 
                               size: 14,
-                              color: kTertiaryColor,
+                              color: kText2Color,
                               weight: FontWeight.w600,
                               fontFamily: AppFonts.poppins),
                         ),
@@ -257,9 +258,9 @@ class CustomDropDown extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 6),
                     height: 48,
                     decoration: BoxDecoration(
-                      color: kTertiaryColor,
+                      color: Color(0xFFFCFCFC),
                       border: Border.all(
-                        color: kPrimaryColor,
+                        color: kQuaternaryColor,
                       ),
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -269,11 +270,11 @@ class CustomDropDown extends StatelessWidget {
                         MyText(
                             text: selectedValue == hint.tr ? hint.tr : selectedValue.tr,  // ✅ Ensure `.tr`
                             size: 14,
-                            color: kPrimaryColor,
+                            color: kText2Color,
                             weight: FontWeight.w600,
                             fontFamily: AppFonts.poppins),
                         CommonImageView(
-                          svgPath: "Assets.svgArrowDown",
+                          svgPath: Assets.svgLetsIconsArrowDropDown,
                           height: 16,
                         )
                       ],
@@ -287,9 +288,9 @@ class CustomDropDown extends StatelessWidget {
                     maxHeight: 300,
                     offset: const Offset(0, -5),
                     decoration: BoxDecoration(
-                        border: Border.all(color: kTertiaryColor),
+                        border: Border.all(color: kQuaternaryColor),
                         borderRadius: BorderRadius.circular(10),
-                        color: kTertiaryColor),
+                        color: kQuaternaryColor),
                   ),
                 ),
               ),

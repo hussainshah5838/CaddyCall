@@ -1,5 +1,11 @@
 import 'package:caddy_call/view/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
+import 'package:caddy_call/view/screens/bottom_nav_bar/staff_bottom_nav_bar.dart';
+import 'package:caddy_call/view/screens/staff/bevCart/bev_cart_screen.dart';
+import 'package:caddy_call/view/screens/staff/history/history_screen.dart';
+import 'package:caddy_call/view/screens/staff/kitchen/kitchen_screen.dart';
+import 'package:caddy_call/view/screens/staff/shift/shiftscreen.dart';
 import 'package:caddy_call/view/screens/staff/staff_home/staff_home_screen.dart';
+import 'package:caddy_call/view/screens/staff/track/track_screen.dart';
 import 'package:caddy_call/view/screens/user/home/home_screen.dart';
 import 'package:caddy_call/view/screens/user/location/items_detail_screen.dart';
 import 'package:caddy_call/view/screens/user/location/view_menu_screen.dart';
@@ -60,7 +66,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(backgroundColor: Colors.white),
       ),
-      home: StaffHomeScreen(),
+      home: SplashScreen(),
       defaultTransition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 500),
     );

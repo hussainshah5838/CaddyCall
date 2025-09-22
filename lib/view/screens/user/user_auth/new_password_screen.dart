@@ -1,5 +1,8 @@
 import 'package:caddy_call/view/custom/my_text_widget.dart';
+import 'package:caddy_call/view/screens/user/user_auth/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../config/constants/app_colors.dart';
 import '../../../../config/constants/app_sizes.dart';
@@ -8,6 +11,7 @@ import '../../../custom/common_image_view_widget.dart';
 import '../../../custom/custom_appbar.dart';
 import '../../../custom/my_button.dart';
 import '../../../custom/my_textfeild.dart';
+import 'forget_password_screen.dart';
 
 
 
@@ -23,7 +27,9 @@ class NewPasswordScreen extends StatelessWidget {
       bottomNavigationBar:  SafeArea(
         child: Padding(
           padding: AppSizes.DEFAULT,
-          child: MyButton(onTap: (){}, buttonText: "Send"),
+          child: MyButton(onTap: (){
+            Get.to(()=>LoginScreen());
+          }, buttonText: "Send"),
         ),
       ),
       body: SingleChildScrollView(

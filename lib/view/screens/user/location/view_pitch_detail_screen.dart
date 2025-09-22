@@ -3,6 +3,7 @@ import 'package:caddy_call/config/constants/app_sizes.dart';
 import 'package:caddy_call/view/custom/common_image_view_widget.dart';
 import 'package:caddy_call/view/custom/my_button.dart';
 import 'package:caddy_call/view/custom/my_text_widget.dart';
+import 'package:caddy_call/view/screens/user/location/view_menu_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../config/constants/app_colors.dart';
@@ -107,6 +108,7 @@ class ViewPitchDetailScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 30),
+
                   /// Example content
                   if (selectedIndex.value == 0)
                     _pitchContent()
@@ -122,98 +124,202 @@ class ViewPitchDetailScreen extends StatelessWidget {
   }
 
   _pitchContent() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 40),
-          child: MyText(
-            text: "Hole 05 Kandy",
-            size: 16,
-            weight: FontWeight.w700,
-            color: kWBGColor,
-          ),
-        ),
-        SizedBox(height: 10,),
-        Padding(
-          padding: const EdgeInsets.only(left: 40),
-          child: Container(
-            width: 85,
-            height: 75,
-            decoration: ShapeDecoration(
-              color: const Color(0xFF424242),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+    return SafeArea(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 40),
+            child: MyText(
+              text: "Hole 05 Kandy",
+              size: 16,
+              weight: FontWeight.w700,
+              color: kWBGColor,
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CommonImageView(svgPath: Assets.svgFlag,),
-                MyText(
-                  text: "125y",
-                  size: 24,
-                  weight: FontWeight.w600,
-                  color: kQuaternaryColor,
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.only(left: 40),
+            child: Container(
+              width: 85,
+              height: 75,
+              decoration: ShapeDecoration(
+                color: const Color(0xFF424242),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6),
                 ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CommonImageView(svgPath: Assets.svgFlag),
+                  MyText(
+                    text: "125y",
+                    size: 24,
+                    weight: FontWeight.w600,
+                    color: kQuaternaryColor,
+                  ),
+                  MyText(
+                    text: "Total",
+                    size: 12,
+                    weight: FontWeight.w400,
+                    color: kQuaternaryColor,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 100),
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              CommonImageView(imagePath: Assets.imagesRing, height: 200),
+              Positioned(
+                top: 70,
+                left: 50,
+                child: CommonImageView(
+                  imagePath: Assets.imagesMeenu,
+                  height: 50,
+                ),
+              ),
+              Positioned(
+                top: -90,
+                left: 50,
+                child: buildWeatherInfo(
+                  title: "Wind",
+                  imagePath: Assets.imagesWind,
+                  value: "20%",
+                ),
+              ),
+              Positioned(
+                top: -30,
+                left: 140,
+                child: buildWeatherInfo(
+                  title: "Next Distance",
+                  imagePath: Assets.imagesNextDistance,
+                  value: "160y",
+                ),
+              ),
+              Positioned(
+                left: 185,
+                top: 80,
+                child: Row(
+                  children: [
+                    CommonImageView(
+                      imagePath: Assets.imagesDirection,
+                      height: 50,
+                    ),
+                    SizedBox(width: 10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        MyText(
+                          text: "Directions",
+                          size: 14,
+                          weight: FontWeight.w600,
+                          color: kQuaternaryColor,
+                        ),
+                        SizedBox(height: 2),
+                        MyText(
+                          text: "Free",
+                          size: 16,
+                          weight: FontWeight.w700,
+                          color: kQuaternaryColor,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                bottom: -40,
+                left: 160,
+                child: buildWeatherInfo(
+                  title: "Flow Details",
+                  imagePath: Assets.imagesFlowDetails,
+                  value: "Hard",
+                ),
+              ),
+              Positioned(
+                bottom: -90,
+                left: 50,
+                child: buildWeatherInfo(
+                  title: "Humidity",
+                  imagePath: Assets.imagesHumadity,
+                  value: "42%",
+                ),
+              ),
+              Positioned(
+                bottom: -40,
+                right: -170,
+                child: Container(
+                  width: 56,
+                  height: 50,
+                  decoration: ShapeDecoration(
+                    color: const Color(0xFF2E2E2E),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(23),
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 18,
+                    color: kQuaternaryColor,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 100),
+          Padding(
+            padding: AppSizes.HORIZONTAL,
+            child: MyText(
+              text: "Description",
+              size: 20,
+              weight: FontWeight.w700,
+              color: kQuaternaryColor,
+            ),
+          ),
+          SizedBox(height: 5),
+          Padding(
+            padding: AppSizes.HORIZONTAL,
+            child: MyText(
+              text:
+                  "Lorem ipsum dolor sit amet consectetur. Arcu tincidunt sit dignissim iaculis ornare pretium. "
+                  "Viverra feugiat facilisis etiam aenean faucibus tellus montes metus lectus."
+                  " Ornare erat iaculis elementum facilisi urna accumsan ut id vel. "
+                  "Lacus ridiculus ut purus et nibh ornare aliquet tincidunt eu. "
+                  "Lectus nulla vulputate in dictumst sed et ultrices non. Aliquam purus cursus in quis neque purus at amet."
+                  "Lorem ipsum dolor sit amet consectetur. Arcu tincidunt sit dignissim iaculis ornare pretium. "
+                  "Viverra feugiat facilisis etiam aenean faucibus tellus montes metus lectus. "
+                  "Ornare erat iaculis elementum facilisi urna accumsan ut id vel."
+                  " Lacus ridiculus ut purus et nibh ornare aliquet tincidunt eu.",
+              size: 12,
+              weight: FontWeight.w400,
+              color: kQuaternaryColor,
+            ),
+          ),
+          SizedBox(height: 30),
+          Center(
+            child: Column(
+              children: [
+                CommonImageView(
+                  imagePath: Assets.imagesMapLocation,
+                  height: 60,
+                ),
+                SizedBox(height: 5),
                 MyText(
-                  text: "Total",
-                  size: 12,
-                  weight: FontWeight.w400,
+                  text: "Map Location",
+                  size: 16,
+                  weight: FontWeight.w700,
                   color: kQuaternaryColor,
                 ),
               ],
             ),
           ),
-        ),
-        SizedBox(height: 20,),
-
-        SizedBox(height: 20,),
-        Padding(
-          padding: AppSizes.HORIZONTAL,
-          child: MyText(
-            text: "Description",
-            size: 20,
-            weight: FontWeight.w700,
-            color: kQuaternaryColor,
-          ),
-        ),
-        SizedBox(height: 5,),
-        Padding(
-          padding: AppSizes.HORIZONTAL,
-          child: MyText(
-            text: "Lorem ipsum dolor sit amet consectetur. Arcu tincidunt sit dignissim iaculis ornare pretium. "
-              "Viverra feugiat facilisis etiam aenean faucibus tellus montes metus lectus."
-              " Ornare erat iaculis elementum facilisi urna accumsan ut id vel. "
-              "Lacus ridiculus ut purus et nibh ornare aliquet tincidunt eu. "
-              "Lectus nulla vulputate in dictumst sed et ultrices non. Aliquam purus cursus in quis neque purus at amet."
-              "Lorem ipsum dolor sit amet consectetur. Arcu tincidunt sit dignissim iaculis ornare pretium. "
-              "Viverra feugiat facilisis etiam aenean faucibus tellus montes metus lectus. "
-              "Ornare erat iaculis elementum facilisi urna accumsan ut id vel."
-              " Lacus ridiculus ut purus et nibh ornare aliquet tincidunt eu.",
-            size: 12,
-            weight: FontWeight.w400,
-            color: kQuaternaryColor,
-
-          ),
-        ),
-        SizedBox(height: 30,),
-        Center(
-          child: Column(
-            children: [
-              CommonImageView(
-                imagePath: Assets.imagesMapLocation,
-                height: 60,
-              ),
-              SizedBox(height: 5,),
-              MyText(
-                text: "Map Location",
-                size: 16,
-                weight: FontWeight.w700,
-                color: kQuaternaryColor,
-              )
-            ],
-          ),
-        )
-      ],
+          SizedBox(height: 50),
+        ],
+      ),
     );
   }
 
@@ -341,7 +447,7 @@ class ViewPitchDetailScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               MyText(
                 text: "In-Round Action",
                 size: 24,
@@ -349,7 +455,7 @@ class ViewPitchDetailScreen extends StatelessWidget {
                 fontFamily: AppFonts.playFair,
                 color: kPrimaryColor,
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               FoodGridScreen(),
             ],
           ),
@@ -375,26 +481,29 @@ class ViewPitchDetailScreen extends StatelessWidget {
                     color: kQuaternaryColor,
                   ),
                   SizedBox(height: 15),
-                  Container(
-                    width: 137,
-                    height: 31,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 9,
-                      vertical: 2,
-                    ),
-                    clipBehavior: Clip.antiAlias,
-                    decoration: ShapeDecoration(
-                      color: kQuaternaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(6),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: 137,
+                      height: 31,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 9,
+                        vertical: 2,
                       ),
-                    ),
-                    child: Center(
-                      child: MyText(
-                        text: "View Details",
-                        size: 12,
-                        weight: FontWeight.w600,
-                        color: kPrimaryColor,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: ShapeDecoration(
+                        color: kQuaternaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                      ),
+                      child: Center(
+                        child: MyText(
+                          text: "View Details",
+                          size: 12,
+                          weight: FontWeight.w600,
+                          color: kPrimaryColor,
+                        ),
                       ),
                     ),
                   ),
@@ -403,15 +512,37 @@ class ViewPitchDetailScreen extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: 20),
+      ],
+    );
+  }
+
+  Widget buildWeatherInfo({
+    required String title,
+    required String imagePath,
+    required String value,
+  }) {
+    return Column(
+      children: [
+        MyText(
+          text: title,
+          size: 12,
+          weight: FontWeight.w600,
+          color: kQuaternaryColor,
+        ),
+        const SizedBox(height: 3),
+        CommonImageView(imagePath: imagePath, height: 45),
+        const SizedBox(height: 3),
+        MyText(
+          text: value,
+          size: 16,
+          weight: FontWeight.w700,
+          color: kQuaternaryColor,
+        ),
       ],
     );
   }
 }
-
-
-
-
 
 class FoodGridScreen extends StatelessWidget {
   FoodGridScreen({super.key});
@@ -460,19 +591,13 @@ class FoodGridScreen extends StatelessWidget {
           decoration: ShapeDecoration(
             color: kQuaternaryColor,
             shape: RoundedRectangleBorder(
-              side: const BorderSide(
-                width: 1,
-                color: Color(0xFFE7E7E7),
-              ),
+              side: const BorderSide(width: 1, color: Color(0xFFE7E7E7)),
               borderRadius: BorderRadius.circular(9),
             ),
           ),
           child: Column(
             children: [
-              CommonImageView(
-                imagePath: item["image"]!,
-                height: 50,
-              ),
+              CommonImageView(imagePath: item["image"]!, height: 50),
               const SizedBox(height: 10),
               MyText(
                 text: item["title"]!,
@@ -491,7 +616,9 @@ class FoodGridScreen extends StatelessWidget {
               const Spacer(),
               MyButton(
                 radius: 6,
-                onTap: () {},
+                onTap: () {
+                  Get.to(() => ViewMenuScreen());
+                },
                 buttonText: "View Menu",
               ),
             ],

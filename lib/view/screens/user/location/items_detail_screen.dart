@@ -400,7 +400,9 @@ class ItemsDetailScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 25),
-                  MyButton(onTap: () {}, buttonText: "Add to cart"),
+                  MyButton(onTap: () {
+                    Get.back();
+                  }, buttonText: "Add to cart"),
                 ],
               ),
             ),

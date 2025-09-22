@@ -2,7 +2,11 @@ import 'package:caddy_call/config/constants/app_fonts.dart';
 import 'package:caddy_call/config/constants/app_sizes.dart';
 import 'package:caddy_call/view/custom/custom_appbar.dart';
 import 'package:caddy_call/view/custom/my_text_widget.dart';
+import 'package:caddy_call/view/screens/user/location/items_detail_screen.dart';
+import 'package:caddy_call/view/screens/user/shop/shopping_cart_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../config/constants/app_colors.dart';
 import '../../../../generated/assets.dart';
@@ -35,23 +39,28 @@ class ViewMenuScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconBox(
-                    svgPath: Assets.imagesPizza,
+                    svgPath: Assets.imagesPp1,
+                    text: "Pizza",
                     onTap: () {},
                   ),
                   IconBox(
-                    svgPath: Assets.imagesChiken,
+                    svgPath: Assets.imagesPp2,
+                    text: "Chicken",
                     onTap: () {},
                   ),
                   IconBox(
-                    svgPath: Assets.imagesBurger,
+                    svgPath: Assets.imagesPp3,
+                    text: "Burger",
                     onTap: () {},
                   ),
                   IconBox(
-                    svgPath: Assets.imagesSpagethi,
+                    svgPath: Assets.imagesPp4,
+                    text: "Spagethi",
                     onTap: () {},
                   ),
                   IconBox(
-                    svgPath: Assets.imagesMore,
+                    svgPath: Assets.imagesPp5,
+                    text: "More",
                     onTap: () {},
                   ),
                 ],
@@ -82,6 +91,7 @@ class ViewMenuScreen extends StatelessWidget {
 
 class IconBox extends StatelessWidget {
   final String svgPath;
+  final String text;
   final Color color;
   final double borderRadius;
   final VoidCallback? onTap;
@@ -89,6 +99,7 @@ class IconBox extends StatelessWidget {
   const IconBox({
     super.key,
     required this.svgPath,
+    required this.text,
     this.color = kPrimaryColor,
     this.borderRadius = 15.25,
     this.onTap,
@@ -96,26 +107,21 @@ class IconBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(borderRadius),
-      onTap: onTap,
-      child: Container(
-        height: 60,
-        width: 60,
-        decoration: ShapeDecoration(
-          color: color,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
-          ),
+    return Column(
+      children: [
+        CommonImageView(imagePath: svgPath, height: 55),
+        SizedBox(height: 8),
+        MyText(
+          text: text,
+          size: 13,
+          weight: FontWeight.w700,
+          color: kBlackColor,
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: CommonImageView(imagePath: svgPath,height: 20,),
-        ),
-      ),
+      ],
     );
   }
 }
+
 
 
 
@@ -141,9 +147,14 @@ class ProductGrid extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CommonImageView(
-              imagePath: Assets.imagesP1,
-              radius: 4,
+            GestureDetector(
+              onTap: (){
+                Get.to(()=>ItemsDetailScreen());
+              },
+              child: CommonImageView(
+                imagePath: Assets.imagesP1,
+                radius: 4,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -173,9 +184,14 @@ class ProductGrid extends StatelessWidget {
                         weight: FontWeight.w800,
                         color: kBlackColor,
                       ),
-                      CommonImageView(
-                        imagePath: Assets.imagesCart1,
-                        height: 30,
+                      GestureDetector(
+                        onTap: (){
+                          Get.to(()=>ShoppingCartScreen());
+                        },
+                        child: CommonImageView(
+                          imagePath: Assets.imagesCart1,
+                          height: 30,
+                        ),
                       ),
                     ],
                   ),

@@ -2,6 +2,7 @@ import 'package:caddy_call/config/constants/app_fonts.dart';
 import 'package:caddy_call/config/constants/app_sizes.dart';
 import 'package:caddy_call/view/custom/custom_appbar.dart';
 import 'package:caddy_call/view/custom/my_text_widget.dart';
+import 'package:caddy_call/view/screens/user/shop/shopping_cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
@@ -183,9 +184,14 @@ class ShopScreen extends StatelessWidget {
                               weight: FontWeight.w800,
                               color: kBlackColor,
                             ),
-                            CommonImageView(
-                              imagePath: Assets.imagesCart1,
-                              height: 30,
+                            GestureDetector(
+                              onTap: (){
+                                Get.to(()=>ShoppingCartScreen());
+                              },
+                              child: CommonImageView(
+                                imagePath: Assets.imagesCart1,
+                                height: 30,
+                              ),
                             ),
                           ],
                         ),

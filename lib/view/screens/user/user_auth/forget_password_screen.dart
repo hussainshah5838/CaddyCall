@@ -1,4 +1,7 @@
+import 'package:caddy_call/view/screens/user/user_auth/verification_code_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../config/constants/app_colors.dart';
 import '../../../../config/constants/app_sizes.dart';
@@ -23,7 +26,9 @@ class ForgetPasswordScreen extends StatelessWidget {
       bottomNavigationBar:  SafeArea(
         child: Padding(
           padding: AppSizes.DEFAULT,
-          child: MyButton(onTap: (){}, buttonText: "Send"),
+          child: MyButton(onTap: (){
+            Get.to(()=>VerificationCodeScreen());
+          }, buttonText: "Send"),
         ),
       ),
       body: SingleChildScrollView(

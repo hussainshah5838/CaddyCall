@@ -24,252 +24,254 @@ class HistoryScreen extends StatelessWidget {
         ],
 
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: AppSizes.DEFAULT,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              MyText(
-                text: "Your Golf Journey",
-                size: 24,
-                weight: FontWeight.w600,
-                color: kPrimaryColor,
-                fontFamily: AppFonts.playFair,
-              ),
-              SizedBox(height: 5,),
-              MyText(
-                text: "Track your progress and celebrate your milestones.",
-                size: 14,
-                weight: FontWeight.w500,
-                color: kText2Color,
-              ),
-              SizedBox(height: 20,),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 202,
-                      clipBehavior: Clip.antiAlias,
-                      padding: EdgeInsets.all(10),
-                      decoration: ShapeDecoration(
-                        color: kQuaternaryColor,
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(
-                            width: 1,
-                            color: const Color(0xFFE3E3E3),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: AppSizes.DEFAULT,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                MyText(
+                  text: "Your Golf Journey",
+                  size: 24,
+                  weight: FontWeight.w600,
+                  color: kPrimaryColor,
+                  fontFamily: AppFonts.playFair,
+                ),
+                SizedBox(height: 5,),
+                MyText(
+                  text: "Track your progress and celebrate your milestones.",
+                  size: 14,
+                  weight: FontWeight.w500,
+                  color: kText2Color,
+                ),
+                SizedBox(height: 20,),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 202,
+                        clipBehavior: Clip.antiAlias,
+                        padding: EdgeInsets.all(10),
+                        decoration: ShapeDecoration(
+                          color: kQuaternaryColor,
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              width: 1,
+                              color: const Color(0xFFE3E3E3),
+                            ),
+                            borderRadius: BorderRadius.circular(8),
                           ),
-                          borderRadius: BorderRadius.circular(8),
                         ),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              CommonImageView(imagePath: Assets.imagesBr,height: 50,),
-                              SizedBox(width: 8,),
-                              MyText(
-                                text: "Best Round",
-                                size: 14,
-                                weight: FontWeight.w500,
-                                color: kText2Color,
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 20,),
-                          MyText(
-                            text: "68",
-                            size: 23,
-                            weight: FontWeight.w700,
-                            color: Colors.black,
-                          ),
-                          SizedBox(height: 10,),
-                          MyText(
-                            text: "Par-4",
-                            size: 14,
-                            weight: FontWeight.w500,
-                            color: kText2Color,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 10,),
-                  Expanded(
-                    child: Container(
-                      height: 202,
-                      clipBehavior: Clip.antiAlias,
-                      padding: EdgeInsets.all(10),
-                      decoration: ShapeDecoration(
-                        color: kQuaternaryColor,
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(
-                            width: 1,
-                            color: const Color(0xFFE3E3E3),
-                          ),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              CommonImageView(imagePath: Assets.imagesAs,height: 50,),
-                              SizedBox(width: 8,),
-                              Expanded(
-                                child: MyText(
-                                  text: "Average Score",
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                CommonImageView(imagePath: Assets.imagesBr,height: 50,),
+                                SizedBox(width: 8,),
+                                MyText(
+                                  text: "Best Round",
                                   size: 14,
                                   weight: FontWeight.w500,
                                   color: kText2Color,
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 20,),
-                          MyText(
-                            text: "75.2",
-                            size: 23,
-                            weight: FontWeight.w700,
-                            color: Colors.black,
-                          ),
-                          SizedBox(height: 10,),
-                          MyText(
-                            text: "Par Round",
-                            size: 14,
-                            weight: FontWeight.w500,
-                            color: kText2Color,
-                          ),
-                          SizedBox(height: 18,),
-                          Row(
-                            children: [
-                              CommonImageView(svgPath: Assets.svgMdiArrowUp,),
-                              MyText(
-                                text: "Imported by 1.5",
-                                size: 14,
-                                weight: FontWeight.w600,
-                                color: Color(0xFF5EC169),
-                              ),
-                            ],
-                          ),
-                        ],
+                                )
+                              ],
+                            ),
+                            SizedBox(height: 20,),
+                            MyText(
+                              text: "68",
+                              size: 23,
+                              weight: FontWeight.w700,
+                              color: Colors.black,
+                            ),
+                            SizedBox(height: 10,),
+                            MyText(
+                              text: "Par-4",
+                              size: 14,
+                              weight: FontWeight.w500,
+                              color: kText2Color,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 10,),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: ShapeDecoration(
-                  color: kQuaternaryColor,
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      width: 1,
-                      color: const Color(0xFFE3E3E3),
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    CommonImageView(imagePath: Assets.imagesBr,height: 47,),
                     SizedBox(width: 10,),
                     Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          MyText(
-                            text: "Total Rounds",
-                            size: 14,
-                            weight: FontWeight.w600,
-                            color: kText2Color,
+                      child: Container(
+                        height: 202,
+                        clipBehavior: Clip.antiAlias,
+                        padding: EdgeInsets.all(10),
+                        decoration: ShapeDecoration(
+                          color: kQuaternaryColor,
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              width: 1,
+                              color: const Color(0xFFE3E3E3),
+                            ),
+                            borderRadius: BorderRadius.circular(8),
                           ),
-                          SizedBox(height: 8,),
-                          MyText(
-                            text: "Rounds Played",
-                            size: 14,
-                            weight: FontWeight.w600,
-                            color: kBlackColor,
-                          ),
-                        ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                CommonImageView(imagePath: Assets.imagesAs,height: 50,),
+                                SizedBox(width: 8,),
+                                Expanded(
+                                  child: MyText(
+                                    text: "Average Score",
+                                    size: 14,
+                                    weight: FontWeight.w500,
+                                    color: kText2Color,
+                                  ),
+                                )
+                              ],
+                            ),
+                            SizedBox(height: 20,),
+                            MyText(
+                              text: "75.2",
+                              size: 23,
+                              weight: FontWeight.w700,
+                              color: Colors.black,
+                            ),
+                            SizedBox(height: 10,),
+                            MyText(
+                              text: "Par Round",
+                              size: 14,
+                              weight: FontWeight.w500,
+                              color: kText2Color,
+                            ),
+                            SizedBox(height: 18,),
+                            Row(
+                              children: [
+                                CommonImageView(svgPath: Assets.svgMdiArrowUp,),
+                                MyText(
+                                  text: "Imported by 1.5",
+                                  size: 14,
+                                  weight: FontWeight.w600,
+                                  color: Color(0xFF5EC169),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    MyText(
-                      text: "112",
-                      size: 23,
-                      weight: FontWeight.w700,
-                      color: kBlackColor,
-                      fontFamily: AppFonts.inter,
-                    )
                   ],
                 ),
-              ),
-              SizedBox(height: 20,),
-              MyText(
-                text: "Performance trends",
-                size: 24,
-                weight: FontWeight.w600,
-                color: kPrimaryColor,
-                fontFamily: AppFonts.playFair,
-              ),
-              SizedBox(height: 20,),
-              AreaChartWidget(),
-              SizedBox(height: 20,),
-              MyText(
-                text: "Birdies & Pars Per Round",
-                size: 24,
-                weight: FontWeight.w600,
-                color: kPrimaryColor,
-                fontFamily: AppFonts.playFair,
-              ),
-              SizedBox(height: 20,),
-              BarChartWidget(),
-              SizedBox(height: 20,),
-              MyText(
-                text: "Recent Rounds",
-                size: 24,
-                weight: FontWeight.w600,
-                color: kPrimaryColor,
-                fontFamily: AppFonts.playFair,
-              ),
-              SizedBox(height: 10,),
-              buildScoreCard(
-                date: "Oct 26 2023",
-                score: "72",
-                clubName: "Springfield Golf Club",
-                eValue: "E",
-                eColor: Colors.black, // change color dynamically
-              ),
-              const SizedBox(height: 12),
-              buildScoreCard(
-                date: "Oct 26 2023",
-                score: "72",
-                clubName: "Springfield Golf Club",
-                eValue: "-2",
-                eColor: Colors.green, // change color dynamically
-              ),
-              const SizedBox(height: 12),
-              buildScoreCard(
-                date: "Oct 26 2023",
-                score: "72",
-                clubName: "Springfield Golf Club",
-                eValue: "+3",
-                eColor: Colors.red, // change color dynamically
-              ),
-              const SizedBox(height: 12),
-              buildScoreCard(
-                date: "Oct 26 2023",
-                score: "72",
-                clubName: "Ocean View Golf",
-                eValue: "-4",
-                eColor: Colors.green, // change color dynamically
-              ),
-              const SizedBox(height: 12),
-
-            ],
+                SizedBox(height: 10,),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: ShapeDecoration(
+                    color: kQuaternaryColor,
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: 1,
+                        color: const Color(0xFFE3E3E3),
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      CommonImageView(imagePath: Assets.imagesBr,height: 47,),
+                      SizedBox(width: 10,),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MyText(
+                              text: "Total Rounds",
+                              size: 14,
+                              weight: FontWeight.w600,
+                              color: kText2Color,
+                            ),
+                            SizedBox(height: 8,),
+                            MyText(
+                              text: "Rounds Played",
+                              size: 14,
+                              weight: FontWeight.w600,
+                              color: kBlackColor,
+                            ),
+                          ],
+                        ),
+                      ),
+                      MyText(
+                        text: "112",
+                        size: 23,
+                        weight: FontWeight.w700,
+                        color: kBlackColor,
+                        fontFamily: AppFonts.inter,
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20,),
+                MyText(
+                  text: "Performance trends",
+                  size: 24,
+                  weight: FontWeight.w600,
+                  color: kPrimaryColor,
+                  fontFamily: AppFonts.playFair,
+                ),
+                SizedBox(height: 20,),
+                AreaChartWidget(),
+                SizedBox(height: 20,),
+                MyText(
+                  text: "Birdies & Pars Per Round",
+                  size: 24,
+                  weight: FontWeight.w600,
+                  color: kPrimaryColor,
+                  fontFamily: AppFonts.playFair,
+                ),
+                SizedBox(height: 20,),
+                BarChartWidget(),
+                SizedBox(height: 20,),
+                MyText(
+                  text: "Recent Rounds",
+                  size: 24,
+                  weight: FontWeight.w600,
+                  color: kPrimaryColor,
+                  fontFamily: AppFonts.playFair,
+                ),
+                SizedBox(height: 10,),
+                buildScoreCard(
+                  date: "Oct 26 2023",
+                  score: "72",
+                  clubName: "Springfield Golf Club",
+                  eValue: "E",
+                  eColor: Colors.black, // change color dynamically
+                ),
+                const SizedBox(height: 12),
+                buildScoreCard(
+                  date: "Oct 26 2023",
+                  score: "72",
+                  clubName: "Springfield Golf Club",
+                  eValue: "-2",
+                  eColor: Colors.green, // change color dynamically
+                ),
+                const SizedBox(height: 12),
+                buildScoreCard(
+                  date: "Oct 26 2023",
+                  score: "72",
+                  clubName: "Springfield Golf Club",
+                  eValue: "+3",
+                  eColor: Colors.red, // change color dynamically
+                ),
+                const SizedBox(height: 12),
+                buildScoreCard(
+                  date: "Oct 26 2023",
+                  score: "72",
+                  clubName: "Ocean View Golf",
+                  eValue: "-4",
+                  eColor: Colors.green, // change color dynamically
+                ),
+                const SizedBox(height: 12),
+        
+              ],
+            ),
           ),
         ),
       ),

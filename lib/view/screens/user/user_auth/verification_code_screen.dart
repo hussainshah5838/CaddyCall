@@ -1,4 +1,7 @@
+import 'package:caddy_call/view/screens/user/user_auth/new_password_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../../config/constants/app_colors.dart';
@@ -11,6 +14,7 @@ import '../../../custom/custom_appbar.dart';
 import '../../../custom/my_button.dart';
 import '../../../custom/my_text_widget.dart';
 import '../../../custom/my_textfeild.dart';
+import 'forget_password_screen.dart';
 
 class VerificationCodeScreen extends StatelessWidget {
   const VerificationCodeScreen({super.key});
@@ -22,7 +26,9 @@ class VerificationCodeScreen extends StatelessWidget {
       bottomNavigationBar: SafeArea(
         child: Padding(
           padding: AppSizes.DEFAULT,
-          child: MyButton(onTap: () {}, buttonText: "Send"),
+          child: MyButton(onTap: () {
+            Get.to(()=>NewPasswordScreen());
+          }, buttonText: "Send"),
         ),
       ),
       body: SingleChildScrollView(

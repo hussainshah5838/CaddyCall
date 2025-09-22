@@ -2,7 +2,10 @@ import 'package:caddy_call/config/constants/app_fonts.dart';
 import 'package:caddy_call/config/constants/app_sizes.dart';
 import 'package:caddy_call/view/custom/my_button.dart';
 import 'package:caddy_call/view/custom/my_text_widget.dart';
+import 'package:caddy_call/view/screens/user/shop/track_order_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../config/constants/app_colors.dart';
 import '../../../../generated/assets.dart';
@@ -86,10 +89,15 @@ class ShoppingCartScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          size: 20,
-                          color: kPrimaryColor,
+                        GestureDetector(
+                          onTap: (){
+                            Get.to(()=>TrackOrderScreen());
+                          },
+                          child: Icon(
+                            Icons.arrow_forward_ios,
+                            size: 20,
+                            color: kPrimaryColor,
+                          ),
                         ),
                       ],
                     ),

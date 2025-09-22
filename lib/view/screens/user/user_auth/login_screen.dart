@@ -4,12 +4,18 @@ import 'package:caddy_call/view/custom/common_image_view_widget.dart';
 import 'package:caddy_call/view/custom/custom_appbar.dart';
 import 'package:caddy_call/view/custom/my_button.dart';
 import 'package:caddy_call/view/custom/my_textfeild.dart';
+import 'package:caddy_call/view/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
+import 'package:caddy_call/view/screens/user/user_auth/forget_password_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../config/constants/app_colors.dart';
+import '../../../../controller/select_role_controller/select_role_controller.dart';
 import '../../../../generated/assets.dart';
 import '../../../custom/custom_checkbox_widget.dart';
 import '../../../custom/my_text_widget.dart';
+import '../../bottom_nav_bar/staff_bottom_nav_bar.dart';
 
 
 
@@ -18,6 +24,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final roleController = Get.find<SelectRoleController>();
     return Scaffold(
       appBar: CustomAppBar(
         title: "Sign in",
@@ -59,16 +66,29 @@ class LoginScreen extends StatelessWidget {
                       onChanged: (val){},
                     ),
                   ),
-                  MyText(
-                    text: "Forgot Password?",
-                    size: 14,
-                    weight: FontWeight.w600,
-                    color: kTertiaryColor,
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(()=>ForgetPasswordScreen());
+                    },
+                    child: MyText(
+                      text: "Forgot Password?",
+                      size: 14,
+                      weight: FontWeight.w600,
+                      color: kTertiaryColor,
+                    ),
                   ),
                 ],
               ),
               SizedBox(height: 60,),
-              MyButton(onTap: (){}, buttonText: "Sign In"),
+              MyButton(
+                  onTap: (){
+                    if (roleController.selectedRole.value == "User") {
+                      Get.to(() =>  BottomNavBar());
+                    } else if (roleController.selectedRole.value == "Staff") {
+                      Get.to(() => StaffBottomNavBar());
+                    }
+
+              }, buttonText: "Sign In"),
               SizedBox(height: 30,),
               MyText(
                 text: "Sign in Through",

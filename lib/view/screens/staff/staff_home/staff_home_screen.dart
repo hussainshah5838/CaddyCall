@@ -254,7 +254,7 @@ class StaffHomeScreen extends StatelessWidget {
                               child: Column(
                                 children: [
                                   buildOrderItemRow(2, "Pizza", Assets.svgUtensils),
-                                  buildOrderItemRow(1, "Soda", Assets.svgUtensils),
+                                  buildOrderItemRow(1, "Soda", Assets.svgShoppingCart),
                                   MyTextField(
                                       borderColor: Colors.transparent,
                                       filledColor: Color(0xFFF7F7F7),

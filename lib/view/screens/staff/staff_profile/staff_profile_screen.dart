@@ -1,24 +1,20 @@
-import 'package:caddy_call/config/constants/app_fonts.dart';
-import 'package:caddy_call/config/constants/app_sizes.dart';
-import 'package:caddy_call/view/custom/custom_appbar.dart';
-import 'package:caddy_call/view/custom/my_button.dart';
-import 'package:caddy_call/view/custom/my_text_widget.dart';
-import 'package:caddy_call/view/screens/user/setting/achievements_screen.dart';
-import 'package:caddy_call/view/screens/user/setting/history_screen.dart';
-import 'package:caddy_call/view/screens/user/setting/payment_screen.dart';
+import 'package:caddy_call/view/screens/staff/history/history_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../config/constants/app_colors.dart';
+import '../../../../config/constants/app_fonts.dart';
+import '../../../../config/constants/app_sizes.dart';
 import '../../../../generated/assets.dart';
 import '../../../custom/common_image_view_widget.dart';
-import '../shop/shopping_cart_screen.dart';
+import '../../../custom/custom_appbar.dart';
+import '../../../custom/my_button.dart';
+import '../../../custom/my_text_widget.dart';
 
 
-
-class SettingScreen extends StatelessWidget {
-  const SettingScreen({super.key});
+class StaffProfileScreen extends StatelessWidget {
+  const StaffProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +70,7 @@ class SettingScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 70,
+                      width: 70,
                       height: 26,
                       child: MyButton(
                           onTap: (){},
@@ -99,21 +95,21 @@ class SettingScreen extends StatelessWidget {
                   buildStatsHistoryRow(
                     text: "Stats & history",
                     onTap: () {
-                      Get.to(()=>HistoryScreen());
+                      Get.to(()=>StaffHistoryScreen());
                     },
                   ),
                   Divider(),
                   buildStatsHistoryRow(
                     text: "Achievements",
                     onTap: () {
-                      Get.to(()=>AchievementsScreen());
+                     // Get.to(()=>AchievementsScreen());
                     },
                   ),
                   Divider(),
                   buildStatsHistoryRow(
                     text: "Payment Method",
                     onTap: () {
-                      Get.to(()=>PaymentScreen());
+                      //Get.to(()=>PaymentScreen());
                     },
                   ),
                   Divider(),

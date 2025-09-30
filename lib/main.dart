@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
       debugShowMaterialGrid: false,
       title: "Passion Port",
       theme: ThemeData(
-        fontFamily: AppFonts.poppins,
+        fontFamily: AppFonts.inter,
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(backgroundColor: Colors.white),

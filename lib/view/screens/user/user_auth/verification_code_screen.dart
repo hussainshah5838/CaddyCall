@@ -61,7 +61,7 @@ class VerificationCodeScreen extends StatelessWidget {
                       textStyle: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w400,
-                        fontFamily: AppFonts.poppins,
+                        fontFamily: AppFonts.inter,
                         color: kPrimaryColor,
                       ),
                       decoration: BoxDecoration(
@@ -77,7 +77,7 @@ class VerificationCodeScreen extends StatelessWidget {
                       textStyle: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w400,
-                        fontFamily: AppFonts.poppins,
+                        fontFamily: AppFonts.inter,
                         color: kPrimaryColor,
                       ),
                       decoration: BoxDecoration(
@@ -108,7 +108,7 @@ class VerificationCodeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w400,
-                        fontFamily: AppFonts.poppins,
+                        fontFamily: AppFonts.inter,
                         color: kPrimaryColor,
                       ),
                     ),

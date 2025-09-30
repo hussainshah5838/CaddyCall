@@ -67,7 +67,7 @@ class ViewPitchDetailScreen extends StatelessWidget {
                               ),
                               child: Center(
                                 child: MyText(
-                                  text: "Pitch",
+                                  text: "Course",
                                   size: 14,
                                   weight: FontWeight.w600,
                                   color: kQuaternaryColor,
@@ -602,7 +602,7 @@ class FoodGridScreen extends StatelessWidget {
               MyText(
                 text: item["title"]!,
                 size: 14,
-                weight: FontWeight.w600,
+                weight: FontWeight.w700,
                 color: kBlackColor,
               ),
               const SizedBox(height: 10),

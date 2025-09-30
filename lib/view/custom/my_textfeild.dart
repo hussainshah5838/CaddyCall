@@ -102,7 +102,7 @@ class _MyTextFieldState extends State<MyTextField> {
                 size: widget.labelSize ?? 14,
                 paddingBottom: 6,
                 color: kBlackColor,
-                fontFamily: AppFonts.poppins,
+                fontFamily: AppFonts.inter,
                 weight: widget.labelWeight ?? FontWeight.w600,
               ),
             Container(
@@ -128,7 +128,7 @@ class _MyTextFieldState extends State<MyTextField> {
                 style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.w400,
-                  fontFamily: AppFonts.poppins,
+                  fontFamily: AppFonts.inter,
                   decoration: TextDecoration.none,
                   color: kPrimaryColor,
                 ),
@@ -161,13 +161,13 @@ class _MyTextFieldState extends State<MyTextField> {
                   labelStyle: TextStyle(
                     color: kTertiaryColor,
                     fontSize: widget.labelSize ?? 12,
-                    fontFamily: AppFonts.poppins,
+                    fontFamily: AppFonts.inter,
                     fontWeight: widget.labelWeight ?? FontWeight.w600,
                   ),
                   hintText: widget.hint != null ? widget.hint!.tr : '',
                   hintStyle: TextStyle(
                     fontSize: widget.hintsize ?? 14,
-                    fontFamily: AppFonts.poppins,
+                    fontFamily: AppFonts.inter,
                     color: widget.hintColor ?? kText2Color,
                     fontWeight: widget.hintWeight ?? FontWeight.w400,
                   ),
@@ -308,7 +308,7 @@ class _MyTextField2State extends State<MyTextField2> {
                 style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.w400,
-                  fontFamily: AppFonts.poppins,
+                  fontFamily: AppFonts.inter,
                   decoration: TextDecoration.none,
                   color: kPrimaryColor,
                 ),
@@ -339,13 +339,13 @@ class _MyTextField2State extends State<MyTextField2> {
                   labelStyle: TextStyle(
                     color: kTertiaryColor,
                     fontSize: widget.labelSize ?? 12,
-                    fontFamily: AppFonts.poppins,
+                    fontFamily: AppFonts.inter,
                     fontWeight: widget.labelWeight ?? FontWeight.w600,
                   ),
                   hintText: widget.hint != null ? widget.hint!.tr : '',
                   hintStyle: TextStyle(
                     fontSize: widget.hintsize ?? 17,
-                    fontFamily: AppFonts.poppins,
+                    fontFamily: AppFonts.inter,
                     color: widget.hintColor ?? kTertiaryColor,
                     fontWeight: widget.hintWeight ?? FontWeight.w400,
                   ),

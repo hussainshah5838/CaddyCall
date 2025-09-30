@@ -56,7 +56,7 @@ class StaffProfileScreen extends StatelessWidget {
                           size: 16,
                           weight: FontWeight.w600,
                           color: kPrimaryColor,
-                          fontFamily: AppFonts.poppins,
+                          fontFamily: AppFonts.inter,
                         ),
                         SizedBox(height: 7,),
                         MyText(
@@ -64,7 +64,7 @@ class StaffProfileScreen extends StatelessWidget {
                           size: 12,
                           weight: FontWeight.w400,
                           color: kPrimaryColor,
-                          fontFamily: AppFonts.poppins,
+                          fontFamily: AppFonts.inter,
                         ),
                       ],
                     ),
@@ -135,7 +135,7 @@ class StaffProfileScreen extends StatelessWidget {
                 size: 16,
                 weight: FontWeight.w600,
                 color: kPrimaryColor,
-                fontFamily: AppFonts.poppins,
+                fontFamily: AppFonts.inter,
               ),
             )
 
@@ -162,7 +162,7 @@ class StaffProfileScreen extends StatelessWidget {
               size: 16,
               weight: FontWeight.w600,
               color: kPrimaryColor,
-              fontFamily: AppFonts.poppins,
+              fontFamily: AppFonts.inter,
             ),
             CommonImageView(
               svgPath: Assets.svgArrowForward,

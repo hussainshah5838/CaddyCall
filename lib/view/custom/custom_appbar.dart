@@ -89,7 +89,7 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
             size: 17,
             weight: FontWeight.w600,
             color: kTertiaryColor,
-            fontFamily: AppFonts.poppins,
+            fontFamily: AppFonts.playFair,
           )
               : child, // 👈 Fallback to custom widget if title is null
           actions: actions,

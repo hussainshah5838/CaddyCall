@@ -22,7 +22,7 @@ class SearchWidget extends StatelessWidget {
               fontWeight: FontWeight.w400,
               color: kTertiaryColor,
               fontSize: 14,
-            fontFamily: AppFonts.poppins
+            fontFamily: AppFonts.inter
           ),
           fillColor: kTertiaryColor,
           filled: true,

@@ -255,7 +255,7 @@ class ShoppingCartScreen extends StatelessWidget {
                               MyText(
                                 text: "Payment method",
                                 size: 15,
-                                weight: FontWeight.w500,
+                                weight: FontWeight.w600,
                                 color: kPrimaryColor,
                               ),
                               SizedBox(height: 15,),

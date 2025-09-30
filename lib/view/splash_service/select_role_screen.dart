@@ -36,7 +36,7 @@ class SelectRoleScreen extends StatelessWidget {
               text: "Select your Role",
               size: 38,
               weight: FontWeight.w400,
-              fontFamily: AppFonts.jaini,
+              fontFamily: AppFonts.playFair,
               color: kPrimaryColor,
             ),
             SizedBox(height: 90,),

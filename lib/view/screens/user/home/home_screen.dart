@@ -207,6 +207,7 @@ class HomeScreen extends StatelessWidget {
                                           child: MyButton(
                                             onTap: () {},
                                             buttonText: "View Details",
+                                            fontSize: 12,
                                           ),
                                         ),
                                       ],
@@ -221,7 +222,12 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
                   SizedBox(height: 10),
-                  MyButton(onTap: () {}, buttonText: "Check In For a Round"),
+                  MyButton(
+                      onTap: () {},
+                      buttonText: "Check In For a Round",
+                    fontSize: 14,
+                    weight: FontWeight.w600,
+                  ),
                   SizedBox(height: 10),
                   MyBorderButton(buttonText: "Map Location", onTap: () {}),
                 ],

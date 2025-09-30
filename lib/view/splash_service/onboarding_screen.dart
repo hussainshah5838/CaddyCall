@@ -56,9 +56,9 @@ class OnboardingScreen extends StatelessWidget {
                     MyText(
                       text: titles[currentPage.value],
                       size: 30,
-                      weight: FontWeight.w400,
+                      weight: FontWeight.w600,
                       color: kTextColor,
-                      fontFamily: AppFonts.jaini,
+                      fontFamily: AppFonts.playFair,
                     ),
                     const SizedBox(height: 15),
                     MyText(

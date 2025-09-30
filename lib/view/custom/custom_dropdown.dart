@@ -208,7 +208,7 @@ class CustomDropDown extends StatelessWidget {
                   paddingBottom: 8,
                   text: labelText!.tr,  
                   size: 12,
-                  fontFamily: AppFonts.poppins,
+                  fontFamily: AppFonts.playFair,
                   textAlign: TextAlign.start,
                   weight: FontWeight.w500,
                   color: kBlackColor,
@@ -232,7 +232,7 @@ class CustomDropDown extends StatelessWidget {
                               size: 14,
                               color: kText2Color,
                               weight: FontWeight.w600,
-                              fontFamily: AppFonts.poppins),
+                              fontFamily: AppFonts.playFair),
                         ),
                       )
                       .toList(),
@@ -272,7 +272,7 @@ class CustomDropDown extends StatelessWidget {
                             size: 14,
                             color: kText2Color,
                             weight: FontWeight.w600,
-                            fontFamily: AppFonts.poppins),
+                            fontFamily: AppFonts.playFair),
                         CommonImageView(
                           svgPath: Assets.svgLetsIconsArrowDropDown,
                           height: 16,
